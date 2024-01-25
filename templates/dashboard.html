@@ -1,0 +1,44 @@
+<!-- templates/dashboard.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  {% include 'includes/header.html' %}
+
+  <div class="container mt-4">
+    <h2 class="mb-4">Dashboard</h2>
+
+    <!-- Central hub content for logged-in users -->
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">User Profile</h5>
+            <p class="card-text">View and edit your profile information.</p>
+            <a href="" class="btn btn-primary">Go to Profile</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Project Listing</h5>
+            <p class="card-text">Explore and manage your projects.</p>
+            <a href="" class="btn btn-primary">Go to Projects</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Collaboration</h5>
+            <p class="card-text">Connect and collaborate with others.</p>
+            <a href="" class="btn btn-primary">Go to Collaboration</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
