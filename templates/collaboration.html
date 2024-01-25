@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  {% include 'includes/header.html' %}
+
+    <!-- Collaboration Page -->
+    <div class="container mt-5">
+        <h2 class="mb-4">Collaboration Opportunities</h2>
+
+        <!-- List of Collaboration Opportunities (Placeholders) -->
+        <div class="row">
+            {% for profile in profiles %}
+                {% if profile.user != request.user %}
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ profile.user.username }}</h5>
+                                <p class="card-text">
+                                    Skills: {% for skill in profile.skills.all %}{{ skill.name }}{% if not forloop.last %}, {% endif %}{% endfor %}
+                                </p>
+                                <p class="card-text">Expertise: {% for expertise in profile.expertise.all %}{{ expertise.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+                                <p class="card-text">Preferred Languages: {% for language in profile.preferred_languages.all %}{{ language.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+                                <a href="" class="btn btn-primary">Connect</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

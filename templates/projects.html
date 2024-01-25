@@ -1,0 +1,71 @@
+<!-- templates/project_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  {% include 'includes/header.html' %}
+
+  <!-- Project Listing Page -->
+<div class="container mt-5">
+    <h2 class="mb-4">Project Listing</h2>
+
+    <!-- Filter/Search Options -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <!-- Add your filter options here (e.g., dropdowns, checkboxes) -->
+            <select class="form-select">
+                <option selected>Filter by Category</option>
+                <option value="1">Category 1</option>
+                <option value="2">Category 2</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="col-md-6">
+            <!-- Add your search input here -->
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search projects">
+                <button class="btn btn-outline-secondary" type="button">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- List of Projects (Placeholders) -->
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Project 1</h5>
+                    <p class="card-text">Description of Project 1.</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more project cards as needed -->
+    </div>
+</div>
+
+  <div class="container mt-4">
+    <h2 class="mb-4">Project Detail</h2>
+
+    <!-- Detailed information about the specific project -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">{{ project.title }}</h5>
+        <p class="card-text">{{ project.description }}</p>
+        <!-- Add more project details as needed -->
+      </div>
+    </div>
+
+    <!-- Contact Information or collaboration options -->
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Contact Information</h5>
+        <!-- Replace the placeholders with actual contact information or collaboration options -->
+        <p>Email: {{ project.contact_email }}</p>
+        <p>Collaboration Options: {{ project.collaboration_options }}</p>
+        <!-- Add more contact information or collaboration options as needed -->
+      </div>
+    </div>
+  </div>
+{% endblock %}

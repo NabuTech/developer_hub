@@ -1,0 +1,47 @@
+<!-- templates/includes/header.html -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <!-- Placeholder for logo -->
+      <a class="navbar-brand" href="#">
+        <img src="" alt="Developer Hub Logo" width="50" height="50">
+      </a>
+  
+      <!-- Navigation menu -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <!-- Add your navigation links here -->
+          <li class="nav-item active">
+            <a class="nav-link" href="">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Collaboration</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Network</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">About</a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- User login status -->
+      <div class="ml-3">
+        {% if user.is_authenticated %}
+          <span class="text-success">Logged in as {{ user.username }}</span>
+          <a href=" class="btn btn-outline-danger ml-2">Logout</a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+  

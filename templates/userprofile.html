@@ -1,0 +1,55 @@
+<!-- templates/user_profile.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  {% include 'includes/header.html' %}
+
+  <div class="container mt-4">
+    <h2 class="mb-4">User Profile</h2>
+
+    <!-- User Information -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">User Information</h5>
+        <!-- Display user information, skills, etc. -->
+        <!-- Replace the placeholders with actual user data -->
+        <p>Username: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Skills: {% for skill in user.profile.skills.all %}{{ skill.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+        <!-- Add more user information as needed -->
+      </div>
+    </div>
+
+    <!-- User Projects -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">User Projects</h5>
+        <!-- Display user's projects -->
+        <!-- Replace the placeholders with actual project data -->
+        {% for project in user.projects.all %}
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ project.title }}</h5>
+              <p class="card-text">{{ project.description }}</p>
+              <!-- Add more project details as needed -->
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Connect with Other Developers -->
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Connect with Other Developers</h5>
+        <!-- Add functionality to connect with other developers -->
+        <!-- This can include a list of other developers, a search functionality, etc. -->
+        <!-- Replace the placeholders with actual developer data -->
+        {% for developer in developers %}
+          <p>{{ developer.username }} - {{ developer.profile.skills.all|join:', ' }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
