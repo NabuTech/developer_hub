@@ -1,0 +1,28 @@
+# .gitignore file for Django projects
+
+# Virtual environment
+venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Database files
+db.sqlite3
+
+# Local development settings
+local_settings.py
+
+# Media files
+media/
+
+# Static files
+staticfiles/
+
+# Secret key file
+*.key
+
+# Environment variables file
+.env
