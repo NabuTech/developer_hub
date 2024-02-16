@@ -1,12 +1,11 @@
 # core/urls.py
-
 from django.urls import path
-from .views import home, login, signup, dashboard, userprofile, projects, collaboration, network, about
+from .views import home, login_page, signup_view, dashboard, userprofile, projects, collaboration, network, about
 
 urlpatterns = [
     path('', home, name='home'),
-    path('login/', login, name='login'),
-    path('signup/', signup, name='signup'),
+    path('login/', login_page, name='login'),
+    path('signup/', signup_view, name='signup'),
     path('dashboard/', dashboard, name='dashboard'),
     path('projects/', projects, name='projects'),
     path('userprofile/', userprofile, name='userprofile'),

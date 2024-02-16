@@ -14,6 +14,8 @@ class Profile(models.Model):
     skills = models.ManyToManyField(Skill, related_name='profiles_skills')
     expertise = models.ManyToManyField(Skill, related_name='profiles_expertise')
     preferred_languages = models.ManyToManyField(Skill, related_name='profiles_languages')
-
+    bio = models.TextField(blank=True)
+    location = models.CharField(max_length=255, blank=True)
+    
     def __str__(self):
         return self.user.username

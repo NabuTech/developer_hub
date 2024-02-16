@@ -2,22 +2,33 @@
 
 {% extends 'base.html' %}
 {% load static %}
+{% load messages % }
 
 
 {% block content %}
   <div class="container mt-5">
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
     <h1 class="display-3 font-weight-bold text-primary">Welcome to Developer Hub</h1>
     <p class="lead">
       Elevate your code: Connect, Collaborate, Code.
     </p>
 
     {% if user.is_authenticated %}
-      <p>You are logged in as {{ user.username }}. <a href="{% url 'logout' %}">Logout</a></p>
+      <p>You are logged in as {{ user.username }}. <a href="#" onclick="document.getElementById('logout-form').submit();">Logout</a></p>
+      <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
+        {% csrf_token %}
+      </form>
     {% else %}
       <p>
         Options:
-        <a href="" class="btn btn-primary">Login</a> |
-        <a href="" class="btn btn-success">Sign Up</a>
+        <a href="{% url 'login' %}" class="btn btn-primary">Login</a> |
+        <a href="{% url 'signup' %}" class="btn btn-success">Sign Up</a>
       </p>
     {% endif %}
 
